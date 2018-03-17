@@ -47,6 +47,7 @@ function makeHobbits() {
     // give each hobbit a class of hobbit
   let hobbiton = document.getElementsByClassName('The Shire');
   let hobbitsis = document.createElement('ul');
+  hobbitsis.id = 'hobbitsis';
   hobbiton[0].appendChild(hobbitsis);
   for (var i = 0; i <= hobbits.length - 1; i++) {
   	let list = document.createElement('li');
@@ -61,7 +62,7 @@ makeHobbits();
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
   let theRing = document.createElement('div');
-  theRing.IdName = 'the-ring';
+  theRing.id = 'the-ring';
   // give the div a class of 'magic-imbued-jewelry'
   theRing.className = 'magic-imbued-jewelry';
   // add the ring as a child of Frodo
@@ -76,9 +77,11 @@ function makeBuddies() {
   let buddyAside = document.createElement('aside');
   // attach an unordered list of the 'buddies' in the aside
   let buddyList = document.createElement('ul');
+  buddyList.id = 'buddyList'
   buddyAside.appendChild(buddyList);
   for (var i = 0; i <= buddies.length - 1; i++) {
   	let list = document.createElement('li');
+  	list.id = buddies[i];
   	buddyList.appendChild(list);
   	let txt = document.createTextNode(buddies[i]);
   	list.appendChild(txt);
@@ -90,10 +93,24 @@ function makeBuddies() {
 makeBuddies();
 
 
+function beautifulStranger() {
+  // change the 'Strider' textnode to 'Aragorn'
+  let strider = document.getElementById('Strider');
+  strider.innerText = 'Aragorn';
+}
+beautifulStranger();
 
+function leaveTheShire() {
+  // assemble the hobbits and move them to Rivendell
+  let theShire = document.getElementsByClassName('The Shire');
+  let hobbit = theShire.children;
+  console.log(hobbit);
+  let rivendell = document.getElementById('buddyList');
+  let theHobbits = document.getElementById('hobbitsis');
+  rivendell.appendChild(theHobbits);
 
-
-
+}
+leaveTheShire();
 
 
 
