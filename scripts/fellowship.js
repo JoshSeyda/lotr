@@ -65,7 +65,8 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   theRing.className = 'magic-imbued-jewelry';
   // add the ring as a child of Frodo
-  let frodoBaggins = document.getElementsByClassName('hobbit').firstChild;
+  let frodoBaggins = document.getElementsByClassName('hobbit')[0];
+  console.log(frodoBaggins);
   frodoBaggins.appendChild(theRing);
 }
 keepItSecretKeepItSafe();
