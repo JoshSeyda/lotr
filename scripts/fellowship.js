@@ -104,7 +104,6 @@ function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
   let theShire = document.getElementsByClassName('The Shire');
   let hobbit = theShire.children;
-  console.log(hobbit);
   let rivendell = document.getElementById('buddyList');
   let theHobbits = document.getElementById('hobbitsis');
   rivendell.appendChild(theHobbits);
@@ -113,9 +112,29 @@ function leaveTheShire() {
 leaveTheShire();
 
 
+function forgeTheFellowShip() {
+  // create a new div with an id of 'the-fellowship'
+  let theFello = document.createElement('div');
+  theFello.id = 'the-fellowship';
+  // add each hobbit and buddy one at a time to 'the-fellowship'
+  for (var i = 0; i <= buddies.length - 1; i++) {
+  	let character = document.getElementById('buddyList');
+  	console.log(character[i]);
+  	theFello.innerHTML = character;
+  	// alert(character +"has joined the party!");
+  }
+  for (var i = 0; i <= hobbits.length - 1; i++) {
+  	let character = document.getElementById(hobbitsis[i]);
+  	theFello.innerHTML = character;
+  	// alert(character +"has joined the party!");
+  }
+  // after each character is added make an <a href="http://www.w3schools.com/jsref/met_win_alert.asp">alert</a> that they have joined your party
+  // append the fellowship div to rivendell
+let rivendell = document.getElementsByClassName('Rivendell')[0];
+  rivendell.appendChild(theFello);
+}
 
-
-
+forgeTheFellowShip();
 
 
 
