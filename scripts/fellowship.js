@@ -58,4 +58,47 @@ function makeHobbits() {
 }
 makeHobbits();
 
+function keepItSecretKeepItSafe() {
+  // create a div with an id of 'the-ring'
+  let theRing = document.createElement('div');
+  theRing.IdName = 'the-ring';
+  // give the div a class of 'magic-imbued-jewelry'
+  theRing.className = 'magic-imbued-jewelry';
+  // add the ring as a child of Frodo
+  let frodoBaggins = document.getElementsByClassName('hobbit')[0];
+  frodoBaggins.appendChild(theRing);
+}
+keepItSecretKeepItSafe();
+
+
+function makeBuddies() {
+  // create an aside tag
+  let buddyAside = document.createElement('aside');
+  // attach an unordered list of the 'buddies' in the aside
+  let buddyList = document.createElement('ul');
+  buddyAside.appendChild(buddyList);
+  for (var i = 0; i <= buddies.length - 1; i++) {
+  	let list = document.createElement('li');
+  	buddyList.appendChild(list);
+  	let txt = document.createTextNode(buddies[i]);
+  	list.appendChild(txt);
+  }
+  // insert your aside as a child element of rivendell
+  let rivendell = document.getElementsByClassName('Rivendell')[0];
+  rivendell.appendChild(buddyAside);
+}
+makeBuddies();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
